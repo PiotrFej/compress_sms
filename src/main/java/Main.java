@@ -17,19 +17,22 @@ public class Main {
         String text = scanner.nextLine();
 
         System.out.println("Please write the price for one SMS in your country (PLN): ");
-        double price = scanner.nextInt();
+        double price = scanner.nextDouble();
 
         scanner.close();
 
         String compressedText = nc.compress(text);
 
-        int smsAmount = p.paginate(compressedText).length;
+        int smsAmount = p.paginate(compressedText).size();
 
         BigDecimal totalPrice = c.calculate(smsAmount, price);
+
+        String decompressedText = nc.decompress(compressedText);
 
         System.out.println(compressedText);
         System.out.println(smsAmount);
         System.out.println(totalPrice);
+        System.out.println(decompressedText);
 
 
 

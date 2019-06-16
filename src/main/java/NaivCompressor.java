@@ -10,14 +10,19 @@ public class NaivCompressor implements Compress {
         for (String word : words){
             String first = word.substring(0,1);
             first = first.toUpperCase();
-            outS += first + word.substring(1) + " ";
+            outS += first + word.substring(1);
         }
-        outS = outS.replace(" ", "");
+
         return outS;
     }
 
     @Override
     public String decompress(String text) {
-        return null;
+        String[] decompressedText = null;
+
+            decompressedText = text.split("\\[.*?(?:= [0-9]+ =|$)");
+
+            return decompressedText.toString();
+
     }
 }
