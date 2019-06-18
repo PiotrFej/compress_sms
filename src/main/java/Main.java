@@ -32,7 +32,7 @@ public class Main {
         System.out.println(compressedText);
         System.out.println(smsAmount);
         System.out.println(totalPrice);
-        System.out.println(decompressedText);
+       // System.out.println(decompressedText);
 
 
 
